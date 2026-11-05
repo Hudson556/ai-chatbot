@@ -1,18 +1,19 @@
-# Your customized AI. Edit, then rebuild with:  ollama create my-ai -f Modelfile
-FROM gemma4:12b
+# "my-ai" = deep mode: thinks before answering. Best for analysis, math, trading logic.
+# Rebuild after editing:  ollama create my-ai -f Modelfile
+FROM qwen3.5:9b
 
-# --- Parameters (tuning knobs) ---
-# temperature: 0 = precise/robotic, 1+ = creative/random
-PARAMETER temperature 0.6
-# top_p: word-choice variety
-PARAMETER top_p 0.9
-# num_ctx: conversation memory (higher = more RAM; keep <= 16384 on 15 GB)
-PARAMETER num_ctx 8192
-# repeat_penalty: discourages repeating itself
-PARAMETER repeat_penalty 1.1
+# Qwen's official "thinking mode, general tasks" settings
+PARAMETER temperature 1.0
+PARAMETER top_p 0.95
+PARAMETER top_k 20
+PARAMETER min_p 0.0
+PARAMETER presence_penalty 1.5
 
-# --- Personality / instructions ---
+# Memory window. Qwen recommends 128K for best reasoning; 32K is the RAM-saving trade-off.
+# Raise to 65536 if long chats get forgetful and you have RAM to spare.
+PARAMETER num_ctx 32768
+
 SYSTEM """
 You are a direct, honest assistant. Use headers, bold text, and tables.
-Never make up facts; say when you are unsure.
+Never make up facts or numbers; say clearly when you are unsure.
 """

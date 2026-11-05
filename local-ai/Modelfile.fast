@@ -1,0 +1,18 @@
+# "my-ai-fast" = quick mode. Run it with thinking off:  ollama run my-ai-fast --think=false
+# Rebuild after editing:  ollama create my-ai-fast -f Modelfile.fast
+FROM qwen3.5:9b
+
+# Qwen's official "non-thinking mode, general tasks" settings
+PARAMETER temperature 0.7
+PARAMETER top_p 0.8
+PARAMETER top_k 20
+PARAMETER min_p 0.0
+PARAMETER presence_penalty 1.5
+
+# Quick mode doesn't need long reasoning, so a smaller window saves RAM.
+PARAMETER num_ctx 16384
+
+SYSTEM """
+You are a direct, honest assistant. Answer concisely. Use headers, bold text, and tables.
+Never make up facts or numbers; say clearly when you are unsure.
+"""
