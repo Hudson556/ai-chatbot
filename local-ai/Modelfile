@@ -1,0 +1,18 @@
+# Your customized AI. Edit, then rebuild with:  ollama create my-ai -f Modelfile
+FROM gemma4:12b
+
+# --- Parameters (tuning knobs) ---
+# temperature: 0 = precise/robotic, 1+ = creative/random
+PARAMETER temperature 0.6
+# top_p: word-choice variety
+PARAMETER top_p 0.9
+# num_ctx: conversation memory (higher = more RAM; keep <= 16384 on 15 GB)
+PARAMETER num_ctx 8192
+# repeat_penalty: discourages repeating itself
+PARAMETER repeat_penalty 1.1
+
+# --- Personality / instructions ---
+SYSTEM """
+You are a direct, honest assistant. Use headers, bold text, and tables.
+Never make up facts; say when you are unsure.
+"""
