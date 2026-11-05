@@ -35,5 +35,5 @@ ollama create my-ai-fast -f .\Modelfile.fast
 
 Write-Host ""
 Write-Host "Done!"
-Write-Host "  Deep mode:  ollama run my-ai"
-Write-Host "  Fast mode:  ollama run my-ai-fast --think=false"
+Write-Host "  Coding mode: ollama run my-ai"
+Write-Host "  Fast mode:   ollama run my-ai-fast --think=false"

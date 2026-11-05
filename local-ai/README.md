@@ -7,11 +7,11 @@
 ## Use
 | Mode | Command | Best for |
 |---|---|---|
-| Deep (thinks first) | `ollama run my-ai` | Analysis, math, multi-step logic |
-| Fast | `ollama run my-ai-fast --think=false` | Quick questions, chat |
+| Coding (thinks first) | `ollama run my-ai` | Writing and debugging code, hard problems |
+| Fast | `ollama run my-ai-fast --think=false` | General knowledge, quick questions |
 
 ## Files
-- `Modelfile`: deep-mode settings and personality
+- `Modelfile`: coding-mode settings and personality
 - `Modelfile.fast`: fast-mode settings
 - After editing either one, rebuild: `ollama create my-ai -f Modelfile`
 

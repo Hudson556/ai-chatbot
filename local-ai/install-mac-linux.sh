@@ -41,5 +41,5 @@ ollama create my-ai-fast -f ./Modelfile.fast
 
 echo
 echo "Done!"
-echo "  Deep mode:  ollama run my-ai"
-echo "  Fast mode:  ollama run my-ai-fast --think=false"
+echo "  Coding mode: ollama run my-ai"
+echo "  Fast mode:   ollama run my-ai-fast --think=false"
