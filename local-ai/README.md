@@ -1,7 +1,7 @@
 # Local AI: Qwen3.5 9B
 
 ## Install (one command, run from this folder)
-- **Windows:** `powershell -ExecutionPolicy Bypass -File .\install-windows.ps1`
+- **Windows:** double-click `INSTALL-WINDOWS.bat` (or run `powershell -ExecutionPolicy Bypass -File .\install-windows.ps1`)
 - **Mac/Linux:** `bash install-mac-linux.sh`
 
 ## Use
