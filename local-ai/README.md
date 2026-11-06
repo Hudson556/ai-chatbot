@@ -10,6 +10,11 @@
 | Coding (thinks first) | `ollama run my-ai` | Writing and debugging code, hard problems |
 | Fast | `ollama run my-ai-fast --think=false` | General knowledge, quick questions |
 
+## Use it inside Claude (Claude Code)
+Double-click `START-CLAUDE-LOCAL.bat`. It builds `my-ai-claude` (64K context) and opens Claude Code
+on your local model in `%USERPROFILE%\ai-playground`. Free, no Anthropic account usage.
+Manual: `ollama launch claude --model my-ai-claude`
+
 ## Files
 - `Modelfile`: coding-mode settings and personality
 - `Modelfile.fast`: fast-mode settings

@@ -1,0 +1,14 @@
+# "my-ai-claude" = your Qwen3.5 9B, sized for Claude Code.
+# Claude Code sends long instructions + file contents, so Ollama recommends 64K+ context.
+# Build:  ollama create my-ai-claude -f Modelfile.claude
+FROM qwen3.5:9b
+
+# Qwen's official "thinking mode, precise coding tasks" settings
+PARAMETER temperature 0.6
+PARAMETER top_p 0.95
+PARAMETER top_k 20
+PARAMETER min_p 0.0
+PARAMETER presence_penalty 0.0
+
+# 64K window: uses more RAM than my-ai (32K). Drop to 49152 if your PC starts lagging.
+PARAMETER num_ctx 65536
