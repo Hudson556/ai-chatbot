@@ -1,0 +1,17 @@
+# Your TRAINED 9B coder (made by the Kaggle notebook).
+# Build:  ollama create my-ai-coder -f Modelfile.trained     Run:  ollama run my-ai-coder
+FROM hf.co/Hudson2011/my-ai-coder-9B-GGUF:Q4_K_M
+
+# Qwen's official "thinking mode, precise coding tasks" settings
+PARAMETER temperature 0.6
+PARAMETER top_p 0.95
+PARAMETER top_k 20
+PARAMETER min_p 0.0
+PARAMETER presence_penalty 0.0
+PARAMETER num_ctx 32768
+
+SYSTEM """
+You are an expert software engineer. Always reply in English only.
+Write complete, working code. State your approach first; note edge cases and how to test after.
+Never make up facts, functions, or package names. Say clearly when you are unsure.
+"""

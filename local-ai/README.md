@@ -17,3 +17,12 @@
 
 ## Check RAM use
 `ollama ps` shows what's loaded and how much memory it's using.
+
+## Training (optional): make it a stronger coder
+| File | GPU | Model |
+|---|---|---|
+| `training/train-my-ai-coder-9B-kaggle.ipynb` | Kaggle free 2x T4 (32 GB) | **9B** (recommended) |
+| `training/train-my-ai-coder.ipynb` | Colab free T4 (15 GB) | 4B only |
+
+Instructions are in the first cell of each notebook. When training finishes:
+`ollama create my-ai-coder -f Modelfile.trained` then `ollama run my-ai-coder`
